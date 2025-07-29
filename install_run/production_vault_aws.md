@@ -21,10 +21,14 @@ Add the details from `./vault.service`
 Production deployment of vault requires a configuration file.
 
 ```sh
-ExecStart=/usr/local/bin/vault server -config=/etc/vault.d/vault.hcl
+ExecStart=/usr/local/bin/vault server -config=/etc/vault.d/vault_int_storage.hcl
 ```
 
-So we will define the `/etc/vault.d/vault.hcl` config
+So we will define the `/etc/vault.d/vault_int_storage.hcl` config
 
 Note: `.hcl` is HCL, or HashiCorp Configuration Language (domain-specific language developed by HashiCorp. Its primary purpose is to define structured configurations in a human-readable and machine-friendly format, particularly for infrastructure as code (IaC) tools)
 
+
+Note: We have two `vault*.hcl` file. 
+* `vault_int_storage.hcl`: For integrated storage (uses RAFT storage protocol) 
+* `vault.hcl`: For External storage (uses Consul)
