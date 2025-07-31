@@ -10,3 +10,4 @@ Now, to validate the configuration file before using it by the vault service. Us
 ```sh
 vault operator diagnose -config=/etc/vault.d/vault.hcl
 ```
+
