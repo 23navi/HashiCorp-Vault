@@ -175,3 +175,11 @@ Now if we run `sudo systemctl restart vault` and run `vault status` we will see 
  Note: Even after migration and restart of vault, we can still use the same `root token`
 
  
+
+
+Note: When using vault without TLS, we will have to use `http` instead of `https`. By default the CLI calls the `https` api endpoint, so to use CLI to work with our unsecure deployment, we must export an env variable with vault endpoint
+
+
+```bash
+export VAULT_ADDR='http://localhost:8200'
+```
