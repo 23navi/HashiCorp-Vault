@@ -183,3 +183,12 @@ Note: When using vault without TLS, we will have to use `http` instead of `https
 ```bash
 export VAULT_ADDR='http://localhost:8200'
 ```
+
+
+The CLI uses a token helper to cache access tokens after authenticating with vault login The default file for cached tokens is `~/.vault-token` and deleting the file forcibly logs the user out of Vault.
+
+We can set the env variable `VAULT_TOKEN` with the token value for CLI to use for authentication api calls
+
+```bash
+export VAULT_TOKEN=hvs.xxxxxxxxxxxxxxxx
+```
